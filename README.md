@@ -55,13 +55,6 @@ The script uses two variables at the top of `vm_deploy.sh` to locate the UEFI fi
 Because file locations and naming conventions differ across Linux distributions, **you must verify and manually adjust these variables in `vm_deploy.sh` according to the host distro being used**:
 
 ```bash
-# vm config
-VM_NAME="$1"
-shift
-
-DISK_SIZE="100G"
-RAM="6G"
-CPU="4"
 OVMF_CODE="/path/to/OVMF_CODE..."
 OVMF_VARS_TEMPLATE="/path/to/OVMF_VARS..."
 ```

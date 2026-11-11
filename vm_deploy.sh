@@ -4,6 +4,8 @@
 VM_NAME="$1"
 shift
 
+[[ -z "$VM_NAME" ]] && { echo "### Please type a new valid or existing VM name to run!" >&2; exit 1; }
+
 DISK_SIZE="100G"
 RAM="6G"
 CPU="4"
@@ -25,6 +27,9 @@ for arg in "$@"; do
                 cdrom="$cdrom -drive file=../$arg,media=cdrom,id=cdrom${cdrom_count},index=$((cdrom_count - 1))"
             fi
             ;;
+	*)
+	    echo "### Please try a valid option!"
+	    exit 0
     esac
 done
 
